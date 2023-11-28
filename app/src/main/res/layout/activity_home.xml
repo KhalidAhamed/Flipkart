@@ -12,7 +12,7 @@
     >
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/flipkartHomeBtn"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.06"
@@ -27,6 +27,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
+        android:id="@+id/groceryBtn"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.06"
@@ -40,15 +41,101 @@
         android:layout_marginEnd="40dp"
         />
 
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/flipkartHomeBtn"
+        app:layout_constraintBottom_toTopOf="@+id/switchbtn"
+        android:text="Brand Mall"
+        android:fontFamily="sans-serif"
+        android:textSize="12sp"
+        android:id="@+id/brandmall"
+        android:textColor="@color/grey"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="5dp"
+
+        android:layout_marginStart="10dp"
+        />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/brandmall"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/fragment_container"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/switchbtn"
+        />
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/search_symbol"
+        app:layout_constraintTop_toTopOf="@id/search_bar"
+        app:layout_constraintStart_toStartOf="@id/search_bar"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="15dp"
+        />
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/microphone"
+        app:layout_constraintTop_toTopOf="@id/search_bar"
+        app:layout_constraintEnd_toEndOf="@id/search_bar"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
+        />
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/camera"
+        app:layout_constraintTop_toTopOf="@id/search_bar"
+        app:layout_constraintEnd_toEndOf="@id/search_bar"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        />
+
+
+    <EditText
+        android:id="@+id/search_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/search_bar"
+        android:ems="12"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="sans-serif"
+        android:hint="Search here"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/groceryBtn" />
     <androidx.fragment.app.FragmentContainerView
-        android:layout_marginTop="20dp"
         android:id="@+id/fragment_container"
         android:name="com.example.flipkart.Fragments.HomeFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toTopOf="@id/BottomNavigationView"
+        app:layout_constraintTop_toBottomOf="@+id/switchbtn" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_navigation"
+        android:id="@+id/BottomNavigationView"
+        app:layout_constraintTop_toBottomOf="@id/fragment_container"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
