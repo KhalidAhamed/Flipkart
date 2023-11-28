@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.HomeFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                />
+
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/search_bar"
+                app:layout_constraintTop_toTopOf="parent"
+                android:ems="13"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:hint="Search here"
+                android:layout_marginEnd="15dp"
+                />
+
+            <ViewFlipper
+                app:layout_constraintTop_toBottomOf="@id/search_bar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:autoStart="true"
+                android:layout_marginTop="20dp"
+                android:flipInterval="3000"
+                android:inAnimation="@android:anim/slide_in_left"
+                android:outAnimation="@android:anim/slide_out_right"
+                >
+
+                <ImageView
+                    android:contentDescription="@string/app_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/image_1"
+                    android:scaleType="fitXY"
+                    />
+                <ImageView
+                    android:contentDescription="@string/app_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/image_2"
+                    android:scaleType="fitXY"
+                    />
+                <ImageView
+                    android:contentDescription="@string/app_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/image_3"
+                    android:scaleType="fitXY"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/image_4"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="fitXY"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/image_5"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="fitXY"
+                    />
+
+
+            </ViewFlipper>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </FrameLayout>
+
+
+
+</androidx.core.widget.NestedScrollView>
