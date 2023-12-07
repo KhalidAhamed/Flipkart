@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebViewClient
 import com.example.flipkart.R
+import com.example.flipkart.databinding.FragmentGroceryBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +23,7 @@ class GroceryFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var bindingGrocery : FragmentGroceryBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,8 +37,15 @@ class GroceryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        bindingGrocery = FragmentGroceryBinding.inflate(inflater, container, false)
+        val webView = bindingGrocery.webView
+        webView.webViewClient = WebViewClient()
+        webView.loadUrl("https://www.google.com")
+        webView.settings.javaScriptEnabled = true
+        webView.settings.setSupportZoom(true)
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_grocery, container, false)
+        return bindingGrocery.root
     }
 
     companion object {
